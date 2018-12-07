@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './components/products/product-list.component';
 
+import { ConvertToSpacesPipe } from './pipes/convert-to-spaces.pipe';
+
 @NgModule({
 	imports: [
 		BrowserModule,
@@ -13,6 +15,7 @@ import { ProductListComponent } from './components/products/product-list.compone
 	declarations: [
 		AppComponent,
 		ProductListComponent,
+		ConvertToSpacesPipe,
 	],
 	bootstrap: [AppComponent]
 })
