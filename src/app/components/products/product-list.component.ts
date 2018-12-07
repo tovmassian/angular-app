@@ -86,4 +86,8 @@ export class ProductListComponent implements OnInit {
 	performFilter(filterBy: string): interfaces.IProduct[] {
 		return this.products.filter((product: interfaces.IProduct) => product.productName.toLowerCase().search(filterBy.toLowerCase()) !== -1 );
 	}
+
+	OnRatingClicked(message: string): void {
+		alert(message);
+	}
 }
