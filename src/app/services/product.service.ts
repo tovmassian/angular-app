@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 import * as interfaces from '../models/interfaces/index';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { Observable, throwError, from } from 'rxjs';
+import { catchError, filter, map } from 'rxjs/operators';
 
 @Injectable({
 	providedIn: 'root'
@@ -14,6 +14,13 @@ export class ProductService {
 
 	getProducts(): Observable<interfaces.IProduct[]> {
 		return this.http.get<interfaces.IProduct[]>(this.productUrl).pipe(catchError(this.handleError));
+	}
+
+	getProductById(id: number): Observable<interfaces.IProduct> {
+		return this.http.get<interfaces.IProduct[]>(this.productUrl).pipe(
+			map(products => products.find(product => product.productId === id)),
+			catchError(this.handleError)
+		);
 	}
 
 	private handleError(err: HttpErrorResponse) {
