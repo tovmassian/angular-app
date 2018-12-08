@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import * as interfaces from '../../models/interfaces/index';
-import { ProductService } from '../../services/product.service';
+import * as interfaces from '../../../models/interfaces/index';
+import { ProductService } from '../../../services/product.service';
 
 @Component({
 	selector: 'pm-products',
