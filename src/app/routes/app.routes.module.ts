@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ProductListComponent } from '../components/products/product-list/product-list.component';
-import { ProductDetailComponent } from '../components/products/product-detail/product-detail.component';
-import { WelcomeComponent } from '../components/home/welcome/welcome.component';
+import { ProductListComponent } from '../modules/products/components/product-list/product-list.component';
+import { ProductDetailComponent } from '../modules/products/components/product-detail/product-detail.component';
+import { WelcomeComponent } from '../modules/home/components/welcome/welcome.component';
 
-import { ProductDetailGuard } from '../components/products/product-detail/guard/product-detail.guard';
+import { ProductDetailGuard } from '../modules/products/components/product-detail/guard/product-detail.guard';
 
 const appRoutes: Routes = [
 		{ path: 'products', component: ProductListComponent },
@@ -18,7 +17,6 @@ const appRoutes: Routes = [
 
 @NgModule({
 	imports: [
-		CommonModule,
 		RouterModule.forRoot(appRoutes)
 	],
 	exports: [RouterModule],
